@@ -1,0 +1,201 @@
+/* ================================
+   🎮 ГРА: ВГАДАЙ СЛОВО
+   style.css
+   ================================ */
+
+/* --- Загальні налаштування сторінки --- */
+body {
+  font-family: 'Catamaran', sans-serif;
+  background: radial-gradient(circle at center, #0d0d1a, #000010);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: scroll;
+}
+
+/* --- Контейнер гри --- */
+.game-container {
+  background: rgba(119, 119, 154, 0.85);
+  box-shadow: 0 0 40px rgba(0, 180, 255, 0.6);
+  border-radius: 25px;
+  padding: 40px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  transition: all 0.4s ease;
+}
+
+/* --- Заголовок --- */
+h1 {
+  font-size: 28px;
+  color: #00e5ff;
+  text-shadow: 0 0 15px #00e5ff;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* --- Слово --- */
+#word {
+  font-size: 32px;
+  margin: 15px 0;
+  text-shadow: 0 0 15px #00e5ff;
+}
+
+/* --- Контейнер для кнопок варіантів --- */
+#options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* --- Кнопки варіантів --- */
+.option-btn {
+  background: linear-gradient(90deg, #00bcd4, #3f51b5);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+.option-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 1);
+}
+
+/* --- Ефект при правильній/неправильній відповіді --- */
+.option-btn.correct {
+  background: linear-gradient(90deg, #00e676, #00bfa5);
+  box-shadow: 0 0 25px #00e676;
+}
+
+.option-btn.wrong {
+  background: linear-gradient(90deg, #ff1744, #d50000);
+  box-shadow: 0 0 25px #ff1744;
+}
+
+/* --- Кнопки керування --- */
+#listenButton,
+#restart {
+  background: linear-gradient(90deg, #651fff, #00bcd4);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  animation: glow 2.5s infinite alternate;
+}
+
+#listenButton:hover,
+#restart:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px #00e5ff;
+}
+
+/* --- Стиль рахунку --- */
+#score {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #80d8ff;
+}
+
+/* --- Ефекти анімацій --- */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+  }
+  to {
+    text-shadow: 0 0 25px #00bcd4, 0 0 40px #00bcd4;
+  }
+}
+
+/* --- Подарунок (абзац книги) --- */
+.gift-box {
+  background: rgba(0, 30, 60, 0.8);
+  border: 2px solid #00e5ff;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 25px;
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.6);
+  animation: fadeInGift 2s ease forwards;
+}
+
+.gift-box h2 {
+  color: #00e5ff;
+  text-shadow: 0 0 15px #00e5ff;
+  margin-bottom: 15px;
+}
+
+.gift-text {
+  font-size: 16px;
+  color: #d0e7ff;
+  line-height: 1.5;
+  text-align: justify;
+  font-style: italic;
+}
+
+@keyframes fadeInGift {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- Горизонтальна орієнтація (landscape) --- */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  body {
+    height: 90vh;
+    padding: 8px;
+    overflow: scroll;
+    background: radial-gradient(circle at center, #050512, #000010);
+  }
+
+  .game-container {
+    transform: scale(0.9);
+    transform-origin: center center;
+    padding: 25px;
+    width: 95%;
+  }
+
+  #options {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .option-btn {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  #word {
+    font-size: 26px;
+  }
+
+  #listenButton,
+  #restart {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+
+  h1 {
+    margin: 0;
+  }
+}

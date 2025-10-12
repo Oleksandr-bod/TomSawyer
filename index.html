@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гра: TomSawyer</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="game-container">
+  <h1>Перекладач</h1>
+  <div id="word">*******</div>
+
+  <label>
+    <input type="checkbox" id="showWordCheckbox">
+    Показати слово
+  </label>
+
+  <label>
+    <input type="checkbox" id="autoSpeakCheckbox" checked>
+    Озвучувати слово автоматично
+  </label>
+
+  <div id="options"></div>
+  <div id="score"></div>
+  <div id="result"></div>
+
+  <button id="listenButton">Слухати</button>
+  <button id="restart">Грати знову</button>
+</div>
+
+  <script src="./js/words_A1_2.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
