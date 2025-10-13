@@ -3,33 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Гра: TomSawyer</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <title>Bookling | Англійська книга з перекладом</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="game-container">
-  <h1>Перекладач</h1>
-  <div id="word">*******</div>
 
-  <label>
-    <input type="checkbox" id="showWordCheckbox">
-    Показати слово
-  </label>
+  <header>
+    <h1>📘 The Adventures of Tom Sawyer</h1>
+    <button id="theme-toggle">🌙 Темна тема</button>
+  </header>
 
-  <label>
-    <input type="checkbox" id="autoSpeakCheckbox" checked>
-    Озвучувати слово автоматично
-  </label>
+  <main>
+    <div id="book-container"></div>
 
-  <div id="options"></div>
-  <div id="score"></div>
-  <div id="result"></div>
+    <div class="pagination">
+      <button id="prev-btn">⬅️ Назад</button>
+      <span id="page-info"></span>
+      <button id="next-btn">➡️ Далі</button>
+    </div>
+  </main>
 
-  <button id="listenButton">Слухати</button>
-  <button id="restart">Грати знову</button>
-</div>
+  <footer>
+    <p>© 2025 Bookling</p>
+  </footer>
 
-  <script src="./js/words_A1_2.js"></script>
-  <script src="./js/script.js"></script>
+  <script src="data/text.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
